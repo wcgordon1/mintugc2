@@ -1,0 +1,115 @@
+<nav class="navbar">
+  <div class="navbar-container">
+    <a href="/" class="navbar-logo">
+      <img src="/logo.svg" alt="Mint UGC Logo" class="logo-icon" />
+      <span class="logo-text">Mint UGC</span>
+    </a>
+    
+    <a href="#" class="navbar-button">
+      Join Beta
+    </a>
+  </div>
+</nav>
+
+<script>
+  // Add scroll effect to navbar
+  const navbar = document.querySelector('.navbar');
+  if (navbar) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 20) {
+        navbar.classList.add('navbar-scrolled');
+      } else {
+        navbar.classList.remove('navbar-scrolled');
+      }
+    });
+  }
+</script>
+
+<style>
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(10, 10, 10, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 1000;
+    border-bottom: 1px solid rgba(70, 255, 236, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .navbar-scrolled {
+    background-color: rgba(10, 10, 10, 0.9);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  .navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0.75rem 1rem;
+    box-sizing: border-box;
+  }
+  
+  .navbar-logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    transition: transform 0.2s;
+  }
+  
+  .navbar-logo:hover {
+    transform: translateY(-1px);
+  }
+  
+  .logo-icon {
+    width: 2rem;
+    height: 2rem;
+    margin-right: 0.75rem;
+    transition: transform 0.3s ease;
+  }
+  
+  .navbar-logo:hover .logo-icon {
+    transform: rotate(-5deg);
+  }
+  
+  .logo-text {
+    font-size: 1.25rem;
+  }
+  
+  .navbar-button {
+    background-color: #46FFEC;
+    color: #121212;
+    padding: 0.5rem 1.25rem;
+    border-radius: 0.375rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s;
+    font-size: 0.875rem;
+    border: 1px solid transparent;
+  }
+  
+  .navbar-button:hover {
+    background-color: #121212;
+    color: #46FFEC;
+    border-color: #46FFEC;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(70, 255, 236, 0.2);
+  }
+  
+  @media (max-width: 640px) {
+    .logo-text {
+      font-size: 1.125rem;
+    }
+    
+    .navbar-button {
+      padding: 0.5rem 1rem;
+      font-size: 0.75rem;
+    }
+  }
+</style> 

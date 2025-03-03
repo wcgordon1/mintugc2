@@ -1,11 +1,24 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
+import MainHero from '../components/heros/MainHero.astro';
+import FeatureSection from '../components/features/FeatureSection.astro';
+import Features2 from '../components/features/Features2.astro';
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
-	<Welcome />
+	<main>
+		<MainHero />
+		<Features2 />
+		<FeatureSection />
+	</main>
 </Layout>
+
+<style>
+	/* Additional global styles */
+	main {
+		background-color: #121212;
+		min-height: 100vh;
+	}
+</style>

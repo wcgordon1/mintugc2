@@ -1,3 +1,9 @@
+---
+import '../styles/global.css';
+import '../styles/fallback.css';
+import Nav from '../components/Nav.astro';
+---
+
 <!doctype html>
 <html lang="en">
 	<head>
@@ -5,18 +11,33 @@
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<title>Mint UGC | Create Viral UGC Content That Converts</title>
+		<meta name="description" content="Mint UGC helps brands create authentic user-generated content for Reels, YouTube, & TikTok that drives engagement and sales." />
+		<meta property="og:title" content="Mint UGC | Create Viral UGC Content That Converts" />
+		<meta property="og:description" content="Mint UGC helps brands create authentic user-generated content for Reels, YouTube, & TikTok that drives engagement and sales." />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://mintugc.com" />
+		<meta name="twitter:card" content="summary_large_image" />
 	</head>
-	<body>
-		<slot />
+	<body class="bg-off-black text-white">
+		<Nav />
+		<div class="content-wrapper">
+			<slot />
+		</div>
 	</body>
 </html>
 
-<style>
+<style is:global>
 	html,
 	body {
 		margin: 0;
 		width: 100%;
 		height: 100%;
+		font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+		scroll-behavior: smooth;
+	}
+	
+	.content-wrapper {
+		padding-top: 3.5rem; /* Add padding to account for the fixed navbar */
 	}
 </style>
